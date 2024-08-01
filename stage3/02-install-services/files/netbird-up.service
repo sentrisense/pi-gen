@@ -1,0 +1,11 @@
+[Unit]
+Description=Netbird up
+
+[Service]
+User=example_user
+Type=oneshot
+ExecStart=/home/example_user/netbird-up.sh
+WorkingDirectory=/home/example_user
+RemainAfterExit=true
+[Install]
+WantedBy=default.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Labgrid Coordinator
+After=network.target
+
+[Service]
+User=example_user
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/home/example_user/labgrid/crossbar-venv/bin/crossbar start --logformat=syslogd --cbdir /var/lib/labgrid-coordinator --config /etc/labgrid/coordinator.yaml
+ExecStop=/home/example_user/labgrid/crossbar-venv/bin/crossbar stop --cbdir /var/lib/labgrid-coordinator
+Restart=on-failure
+DynamicUser=yes
+StateDirectory=labgrid-coordinator
+
+[Install]
+WantedBy=multi-user.target

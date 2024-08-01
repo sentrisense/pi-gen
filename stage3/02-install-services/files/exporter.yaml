@@ -1,0 +1,8 @@
+example-group:
+  location: "Example Location"
+  NetworkInterface:
+    ifname: wlan0
+  RawSerialPort:
+    port: "/dev/ttyUSB1"
+  SysfsGPIO:
+    index: 26

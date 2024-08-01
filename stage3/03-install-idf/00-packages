@@ -1,0 +1,11 @@
+wget
+flex
+bison
+gperf
+cmake 
+ninja-build
+ccache
+libffi-dev
+libssl-dev
+dfu-util
+libusb-1.0-0

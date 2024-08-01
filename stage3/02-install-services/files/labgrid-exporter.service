@@ -1,0 +1,20 @@
+[Unit]
+Description=Labgrid Exporter
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=example_user
+Environment="PYTHONUNBUFFERED=1"
+Environment="LG_CROSSBAR=ws://127.0.0.1:20408/ws"
+EnvironmentFile=-/etc/environment
+ExecStart=/home/example_user/labgrid/labgrid-venv/bin/labgrid-exporter /etc/labgrid/exporter.yaml
+Restart=on-failure
+RestartForceExitStatus=100
+RestartSec=30
+DynamicUser=yes
+# Adjust to your distribution (most often "dialout" or "tty")
+SupplementaryGroups=dialout plugdev dev adm cdrom sudo audio www-data video users input render netdev gpio i2c spi
+
+[Install]
+WantedBy=multi-user.target

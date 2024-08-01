@@ -1,0 +1,13 @@
+[Unit]
+Description=Labgird's setup tmux session
+After=network.target labgrid-exporter.service
+Requires=labgrid-exporter.service
+
+[Service]
+User=example_user
+Type=oneshot
+ExecStart=/home/example_user/tmux-labgrid.sh
+WorkingDirectory=/home/example_user
+RemainAfterExit=true
+[Install]
+WantedBy=default.target

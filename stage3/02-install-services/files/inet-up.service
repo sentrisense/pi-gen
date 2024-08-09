@@ -1,0 +1,14 @@
+[Unit]
+Description=Inet up
+After=network.target
+
+[Service]
+User=root
+ExecStart=/bin/nmcli device wifi connect "example_wifi_ssid" password "example_wifi_pswd"
+Restart=on-failure
+RestartSec=5
+WorkingDirectory=/home/example_user
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

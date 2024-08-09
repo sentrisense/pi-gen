@@ -1,10 +1,11 @@
 [Unit]
 Description=Netbird up
+After=inet-up.service
 
 [Service]
 User=example_user
 Type=oneshot
-ExecStart=/home/example_user/netbird-up.sh
+ExecStart=/bin/netbird up --setup-key example_key
 WorkingDirectory=/home/example_user
 RemainAfterExit=true
 [Install]

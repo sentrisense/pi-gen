@@ -1,4 +1,4 @@
-#!/bin/bash -e 
+#!/bin/bash -xe 
 
 cd /home/$FIRST_USER_NAME
 

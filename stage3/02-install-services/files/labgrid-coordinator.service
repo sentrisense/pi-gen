@@ -1,6 +1,7 @@
 [Unit]
 Description=Labgrid Coordinator
-After=network.target
+Wants=network-online.target
+After=network-online.target inet-up.service
 
 [Service]
 User=example_user

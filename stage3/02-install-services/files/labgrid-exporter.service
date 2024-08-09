@@ -1,6 +1,7 @@
 [Unit]
 Description=Labgrid Exporter
-After=network-online.target
+Requires=labgrid-coordinator.service
+After=network-online.target labgrid-coordinator.service inet-up.service 
 Wants=network-online.target
 
 [Service]

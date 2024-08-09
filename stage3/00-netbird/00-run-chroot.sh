@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -xe
 
 apt-get update
 apt-get install ca-certificates curl gnupg -y

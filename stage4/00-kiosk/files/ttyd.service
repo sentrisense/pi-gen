@@ -1,0 +1,12 @@
+[Unit]
+Description=ttyd service - Terminal over HTTP
+After=network.target
+
+[Service]
+User=example_user
+ExecStart=/usr/bin/ttyd -p 7682 bash
+Restart=always
+WorkingDirectory=/home/example_user
+
+[Install]
+WantedBy=multi-user.target

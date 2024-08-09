@@ -1,0 +1,8 @@
+lightdm
+matchbox-window-manager
+xserver-xorg
+x11-xserver-utils
+xinit
+openbox
+chromium-browser
+ttyd

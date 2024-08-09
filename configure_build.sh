@@ -14,6 +14,8 @@ read -p "Insert netbird setup key: " netbird_setup_key
 
 read -p "Insert wifi SSID " wifi_ssid
 
+read -p "Insert kiosk URL " kiosk_url
+
 read -s -p "Insert wifi password: " wifi_pswd
 echo
 
@@ -29,4 +31,5 @@ echo "export WIFI_SSID='$wifi_ssid'" >> config
 echo "export WIFI_PSWD='$wifi_pswd'" >> config
 echo "DISABLE_FIRST_BOOT_USER_RENAME=1" >> config
 echo "WPA_COUNTRY='$wpa_country'" >> config
+echo "KIOSK_URL='$kiosk_url'" >> config
 echo "config file created, run ./build-docker.sh"

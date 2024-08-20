@@ -18,10 +18,13 @@ echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg] https
 apt-get update                 
 apt-get install telegraf
 
-rm ${ROOTFS_DIR}/etc/telegraf/telegraf.conf
-
 EOF
 
-install -v -m 600 files/telegraf.conf   "${ROOTFS_DIR}/etc/telegraf/telegraf.conf"
+install -v -m 644 files/telegraf.conf   "${ROOTFS_DIR}/etc/telegraf/telegraf.conf"
+install -v -d                           "${ROOTFS_DIR}/etc/systemd/system/telegraf.service.d"
 install -v -m 600 files/override.conf   "${ROOTFS_DIR}/etc/systemd/system/telegraf.service.d/"
 
+
+install -v -d                           "${ROOTFS_DIR}/var/run/telegraf"
+install -v -d                           "${ROOTFS_DIR}/var/log/telegraf"
+install -v -m 777 files/telegraf.log    "${ROOTFS_DIR}/var/log/telegraf/"

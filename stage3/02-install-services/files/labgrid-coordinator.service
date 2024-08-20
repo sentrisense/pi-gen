@@ -6,8 +6,7 @@ After=network-online.target inet-up.service
 [Service]
 User=example_user
 Environment="PYTHONUNBUFFERED=1"
-ExecStart=/home/example_user/labgrid/crossbar-venv/bin/crossbar start --logformat=syslogd --cbdir /var/lib/labgrid-coordinator --config /etc/labgrid/coordinator.yaml
-ExecStop=/home/example_user/labgrid/crossbar-venv/bin/crossbar stop --cbdir /var/lib/labgrid-coordinator
+ExecStart=/home/example_user/labgrid/labgrid-venv/bin/labgrid-coordinator
 Restart=on-failure
 DynamicUser=yes
 StateDirectory=labgrid-coordinator

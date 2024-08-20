@@ -7,17 +7,11 @@ if [ -d "labgrid" ]; then
 fi
 
 git clone https://github.com/labgrid-project/labgrid
-
 cd labgrid
-
-virtualenv -p python3 crossbar-venv
-crossbar-venv/bin/pip install --upgrade pip
-crossbar-venv/bin/pip install -r crossbar-requirements.txt
+git checkout 1ab0abda791c00e448cbbb8c44a61564efbd16e9
 
 virtualenv -p python3 labgrid-venv
 source labgrid-venv/bin/activate
-
 pip install --upgrade pip
 pip install .
-
 

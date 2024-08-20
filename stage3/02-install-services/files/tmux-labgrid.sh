@@ -1,8 +1,6 @@
 #!/bin/bash
 
 cd ~
-. /home/example_user/esp-idf/export.sh
-
 boards=()
 #boards=("2.1.X" "3.3.X" "3.6.X")
 #labgrid-client -p wifi_place acquire
@@ -21,10 +19,12 @@ if tmux has-session -t "$sn">/dev/null; then
         echo 'labgrid tmux session is already created'
 else
         tmux new-session -d -s "$sn"
+        tmux send-keys "source /home/example_user/esp-idf/export.sh" C-m
         echo 'labrid session created'
         for board in "${boards[@]}"; do
                 tmux new-window -t "$sn" -n "${board}"
                 tmux send-keys "cd $target_directory" C-m
+                tmux send-keys "source /home/example_user/esp-idf/export.sh" C-m
                 tmux send-keys "python" C-m
                 tmux send-keys "from boards import boards" C-m
                 tmux send-keys "boards[\"${board}\"].power_on()" C-m

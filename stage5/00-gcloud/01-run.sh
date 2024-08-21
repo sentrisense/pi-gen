@@ -8,4 +8,5 @@ install -v -m 777 files/backend-key.json   "${ROOTFS_DIR}/home/$FIRST_USER_NAME/
 #./google-cloud-sdk/install.sh --quiet --no-compile-python
 #gcloud auth activate-service-account  devel-and-manufacturing-rpi@less-backend.iam.gserviceaccount.com  --key-file=/home/$FIRST_USER_NAME/backend-key.json
 
+echo 'export GOOGLE_APPLICATION_CREDENTIALS=/home/${FIRST_USER_NAME}/backend-key.json' >> ${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.bashrc
 

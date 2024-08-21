@@ -25,20 +25,8 @@ install -v -m 600 files/tmux.service            	"${ROOTFS_DIR}/etc/systemd/syst
 
 on_chroot << EOF
     systemctl enable inet-up.service
-EOF
-
-on_chroot << EOF
     systemctl enable labgrid-coordinator.service
-EOF
-
-on_chroot << EOF
     systemctl enable labgrid-exporter.service
-EOF
-
-on_chroot << EOF
     systemctl enable tmux.service
-EOF
-
-on_chroot << EOF
     systemctl enable netbird-up.service
 EOF

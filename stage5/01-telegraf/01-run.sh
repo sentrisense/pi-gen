@@ -22,7 +22,7 @@ EOF
 
 install -v -m 644 files/telegraf.conf   "${ROOTFS_DIR}/etc/telegraf/telegraf.conf"
 install -v -d                           "${ROOTFS_DIR}/etc/systemd/system/telegraf.service.d"
-install -v -m 600 files/override.conf   "${ROOTFS_DIR}/etc/systemd/system/telegraf.service.d/"
+install -v -m 644 files/override.conf   "${ROOTFS_DIR}/etc/systemd/system/telegraf.service.d/"
 
 
 install -v -d                           "${ROOTFS_DIR}/var/run/telegraf"

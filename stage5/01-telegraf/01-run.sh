@@ -21,10 +21,14 @@ apt-get install telegraf
 EOF
 
 install -v -m 644 files/telegraf.conf   "${ROOTFS_DIR}/etc/telegraf/telegraf.conf"
-install -v -d                           "${ROOTFS_DIR}/etc/systemd/system/telegraf.service.d"
-install -v -m 644 files/override.conf   "${ROOTFS_DIR}/etc/systemd/system/telegraf.service.d/"
+install -v -m 644 files/override.conf   "${ROOTFS_DIR}/etc/systemd/system/telegraf-custom.service"
 
 
 install -v -d                           "${ROOTFS_DIR}/var/run/telegraf"
 install -v -d                           "${ROOTFS_DIR}/var/log/telegraf"
 install -v -m 777 files/telegraf.log    "${ROOTFS_DIR}/var/log/telegraf/"
+
+on_chroot << EOF
+    systemctl disable telegraf.service
+    systemctl enable telegraf-custom.service
+EOF

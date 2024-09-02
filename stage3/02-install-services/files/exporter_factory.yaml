@@ -1,0 +1,47 @@
+example-group:
+  location: "Example lab"
+  ok_button:
+    cls: 'SysfsGPIO'
+    index: 519
+  en_button:
+    cls: 'SysfsGPIO'
+    index: 523
+  en_ch1:
+    cls: 'SysfsGPIO'
+    index: 525
+  en_ch2:
+    cls: 'SysfsGPIO'
+    index: 527
+  en_ch3:
+    cls: 'SysfsGPIO'
+    index: 531
+  en_ch4:
+    cls: 'SysfsGPIO'
+    index: 533
+  en_usb:
+    cls: 'SysfsGPIO'
+    index: 535
+  solar_led_1:
+    cls: 'SysfsGPIO'
+    index: 541
+  solar_led_2:
+    cls: 'SysfsGPIO'
+    index: 543
+  trg_0:
+    cls: 'SysfsGPIO'
+    index: 545
+  int_0:
+    cls: 'SysfsGPIO'
+    index: 524
+  sts_1:
+    cls: 'SysfsGPIO'
+    index: 528
+  sts_0:
+    cls: 'SysfsGPIO'
+    index: 530
+  int_1:
+    cls: 'SysfsGPIO'
+    index: 534
+  trg_0:
+    cls: 'SysfsGPIO'
+    index: 534

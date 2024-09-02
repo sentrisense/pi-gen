@@ -2,46 +2,46 @@ example-group:
   location: "Example lab"
   ok_button:
     cls: 'SysfsGPIO'
-    index: 519
+    index: 516
   en_button:
     cls: 'SysfsGPIO'
-    index: 523
+    index: 529
   en_ch1:
     cls: 'SysfsGPIO'
-    index: 525
+    index: 539
   en_ch2:
     cls: 'SysfsGPIO'
-    index: 527
+    index: 534
   en_ch3:
     cls: 'SysfsGPIO'
-    index: 531
+    index: 522
   en_ch4:
     cls: 'SysfsGPIO'
-    index: 533
+    index: 521
   en_usb:
     cls: 'SysfsGPIO'
-    index: 535
+    index: 523
   solar_led_1:
     cls: 'SysfsGPIO'
-    index: 541
+    index: 517
   solar_led_2:
     cls: 'SysfsGPIO'
-    index: 543
-  trg_0:
+    index: 518
+  trg_1:
     cls: 'SysfsGPIO'
-    index: 545
+    index: 525
   int_0:
     cls: 'SysfsGPIO'
-    index: 524
+    index: 530
   sts_1:
     cls: 'SysfsGPIO'
-    index: 528
+    index: 535
   sts_0:
     cls: 'SysfsGPIO'
-    index: 530
+    index: 536
   int_1:
     cls: 'SysfsGPIO'
-    index: 534
+    index: 537
   trg_0:
     cls: 'SysfsGPIO'
-    index: 534
+    index: 524

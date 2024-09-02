@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-install -v -m 777 files/backend-key.json   "${ROOTFS_DIR}/home/$FIRST_USER_NAME/"
+install -v -m 644 files/backend-key.json   "${ROOTFS_DIR}/home/$FIRST_USER_NAME/"
 
 # Install google cloud cli (optional)
 #curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz

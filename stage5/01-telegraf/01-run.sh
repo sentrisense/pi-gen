@@ -26,7 +26,7 @@ install -v -m 644 files/override.conf   "${ROOTFS_DIR}/etc/systemd/system/telegr
 
 install -v -d                           "${ROOTFS_DIR}/var/run/telegraf"
 install -v -d                           "${ROOTFS_DIR}/var/log/telegraf"
-install -v -m 777 files/telegraf.log    "${ROOTFS_DIR}/var/log/telegraf/"
+install -v -m 644 files/telegraf.log    "${ROOTFS_DIR}/var/log/telegraf/"
 
 on_chroot << EOF
     systemctl disable telegraf.service

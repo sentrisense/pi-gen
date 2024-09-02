@@ -7,7 +7,7 @@ for file in files/*; do
     fi
 done
 
-install -v -m 777 files/xsession   "${ROOTFS_DIR}/home/$FIRST_USER_NAME/.xsession"
+install -v -m 644 files/xsession   "${ROOTFS_DIR}/home/$FIRST_USER_NAME/.xsession"
 install -v -m 600 files/autologin.conf   "${ROOTFS_DIR}/etc/systemd/system/getty@tty1.service.d/"
 install -v -m 600 files/lightdm.conf   "${ROOTFS_DIR}/etc/lightdm/"
 

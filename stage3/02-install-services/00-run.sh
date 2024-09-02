@@ -10,8 +10,9 @@ for file in files/*; do
 done
 
 install -v -d                               "${ROOTFS_DIR}/etc/labgrid"
-install -v -m 777 files/exporter.yaml       "${ROOTFS_DIR}/etc/labgrid/"
-install -v -m 777 files/coordinator.yaml    "${ROOTFS_DIR}/etc/labgrid/"
+install -v -m 644 files/exporter.yaml       "${ROOTFS_DIR}/etc/labgrid/"
+install -v -m 644 files/exporter_factory.yaml       "${ROOTFS_DIR}/etc/labgrid/"
+install -v -m 644 files/coordinator.yaml    "${ROOTFS_DIR}/etc/labgrid/"
 install -v -m 777 files/tmux-labgrid.sh     "${ROOTFS_DIR}/home/$FIRST_USER_NAME/"
 
 install -v -m 600 -D files/sysusers.d/*	"${ROOTFS_DIR}/etc/"

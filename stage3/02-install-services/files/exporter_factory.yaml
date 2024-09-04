@@ -1,11 +1,8 @@
-example-group:
-  location: "Example lab"
+factory-test-group:
+  location: "factory"
   ok_button:
     cls: 'SysfsGPIO'
     index: 516
-  en_button:
-    cls: 'SysfsGPIO'
-    index: 529
   en_ch1:
     cls: 'SysfsGPIO'
     index: 539
@@ -18,9 +15,6 @@ example-group:
   en_ch4:
     cls: 'SysfsGPIO'
     index: 521
-  en_usb:
-    cls: 'SysfsGPIO'
-    index: 523
   solar_led_1:
     cls: 'SysfsGPIO'
     index: 517
@@ -45,3 +39,28 @@ example-group:
   trg_0:
     cls: 'SysfsGPIO'
     index: 524
+  sda_0:
+    cls: 'SysfsGPIO'
+    index: 512
+  scl_0:
+    cls: 'SysfsGPIO'
+    index: 513
+  sda_1:
+    cls: 'SysfsGPIO'
+    index: 514
+  scl_1:
+    cls: 'SysfsGPIO'
+    index: 515
+
+factory-board-group:
+  location: "factory"
+  usb_port1_isp:
+    cls: 'USBSerialPort'
+    match:
+      ID_PATH: platform-3f980000.usb-usb-0:1.3:1.1
+  board_power_button:
+    cls: 'SysfsGPIO'
+    index: 529
+  board_charger_switch:
+    cls: 'SysfsGPIO'
+    index: 523

@@ -12,6 +12,8 @@ read -p "Insert WPA country for the host (example: AR/ES/EU): " wpa_country
 
 read -p "Insert netbird setup key: " netbird_setup_key
 
+read -p "Insert github token: " github_token
+
 read -p "Insert wifi SSID " wifi_ssid
 
 read -p "Insert kiosk URL " kiosk_url
@@ -27,6 +29,7 @@ echo "export TARGET_HOSTNAME='testingenv$host_name_number'" >> config
 echo "export FIRST_USER_NAME='$user_name'" >> config
 echo "export FIRST_USER_PASS='$password'" >> config
 echo "export NETBIRD_SETUP_KEY='$netbird_setup_key'" >> config
+echo "export GITHUB_TOKEN='$github_token'" >> config
 echo "export WIFI_SSID='$wifi_ssid'" >> config
 echo "export WIFI_PSWD='$wifi_pswd'" >> config
 echo "DISABLE_FIRST_BOOT_USER_RENAME=1" >> config

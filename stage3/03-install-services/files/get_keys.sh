@@ -18,3 +18,7 @@ if nc -dzw3 8.8.8.8 443 || nc -zw3 sentrisense.com 80 ; then
         done
     fi
 fi
+
+# generate own keys & add to auth keys (labgrid requirement)
+yes "" | ssh-keygen
+cat .ssh/id_rsa.pub >> .ssh/authorized_keys

@@ -22,7 +22,7 @@ install -v -m 600 -D files/tmpfiles.d/*	"${ROOTFS_DIR}/etc/"
 install -v -m 600 files/labgrid-coordinator.service	"${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/labgrid-exporter.service	"${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/netbird-up.service	        "${ROOTFS_DIR}/etc/systemd/system/"
-install -v -m 600 files/authorized_keys.service	    "${ROOTFS_DIR}/etc/systemd/system/"
+install -v -m 600 files/authorized-keys.service	    "${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/inet-up.service	            "${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/tmux.service            	"${ROOTFS_DIR}/etc/systemd/system/"
 
@@ -34,9 +34,4 @@ on_chroot << EOF
     systemctl enable netbird-up.service
     systemctl enable authorized-keys.service
 EOF
-
-# create ssh keys & add to authorized
-yes "" |  ssh-keygen -N ""
-# add pubkey to authorized_keys (needed by labgrid)
-cat ${ROOTFS_DIR}/home/$FIRST_USER_NAME/.ssh/id_rsa.pub >> ${ROOTFS_DIR}/home/$FIRST_USER_NAME/.ssh/authorized_keys
 

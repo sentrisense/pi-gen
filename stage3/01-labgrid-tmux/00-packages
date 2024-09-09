@@ -8,3 +8,5 @@ microcom
 git
 libsnappy-dev
 ser2net
+ssh
+ssh-tools

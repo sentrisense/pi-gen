@@ -2,10 +2,6 @@
 
 cd /home/$FIRST_USER_NAME
 
-if [ -d "labgrid" ]; then
-    rm -rf "labgrid"
-fi
-
 git clone https://github.com/labgrid-project/labgrid
 cd labgrid
 git checkout 1ab0abda791c00e448cbbb8c44a61564efbd16e9

@@ -11,9 +11,3 @@ install -v -m 644 files/xsession   "${ROOTFS_DIR}/home/$FIRST_USER_NAME/.xsessio
 install -v -m 600 files/autologin.conf   "${ROOTFS_DIR}/etc/systemd/system/getty@tty1.service.d/"
 install -v -m 600 files/lightdm.conf   "${ROOTFS_DIR}/etc/lightdm/"
 
-install -v -m 600 files/ttyd.service            	"${ROOTFS_DIR}/etc/systemd/system/"
-
-on_chroot << EOF
-    systemctl enable ttyd.service
-EOF
-

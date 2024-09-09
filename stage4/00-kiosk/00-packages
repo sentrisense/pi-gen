@@ -1,8 +1,6 @@
 lightdm
-matchbox-window-manager
+i3
 xserver-xorg
 x11-xserver-utils
 xinit
-openbox
 chromium-browser
-ttyd

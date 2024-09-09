@@ -14,6 +14,7 @@ install -v -m 644 files/exporter.yaml       "${ROOTFS_DIR}/etc/labgrid/"
 install -v -m 644 files/exporter_factory.yaml       "${ROOTFS_DIR}/etc/labgrid/"
 install -v -m 644 files/coordinator.yaml    "${ROOTFS_DIR}/etc/labgrid/"
 install -v -m 777 files/tmux-labgrid.sh     "${ROOTFS_DIR}/home/$FIRST_USER_NAME/"
+install -v -m 777 files/get_keys.sh     "${ROOTFS_DIR}/home/$FIRST_USER_NAME/.get_keys.sh"
 
 install -v -m 600 -D files/sysusers.d/*	"${ROOTFS_DIR}/etc/"
 install -v -m 600 -D files/tmpfiles.d/*	"${ROOTFS_DIR}/etc/"
@@ -21,6 +22,7 @@ install -v -m 600 -D files/tmpfiles.d/*	"${ROOTFS_DIR}/etc/"
 install -v -m 600 files/labgrid-coordinator.service	"${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/labgrid-exporter.service	"${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/netbird-up.service	        "${ROOTFS_DIR}/etc/systemd/system/"
+install -v -m 600 files/authorized_keys.service	    "${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/inet-up.service	            "${ROOTFS_DIR}/etc/systemd/system/"
 install -v -m 600 files/tmux.service            	"${ROOTFS_DIR}/etc/systemd/system/"
 
@@ -30,6 +32,7 @@ on_chroot << EOF
     systemctl enable labgrid-exporter.service
     systemctl enable tmux.service
     systemctl enable netbird-up.service
+    systemctl enable authorized-keys.service
 EOF
 
 # create ssh keys & add to authorized

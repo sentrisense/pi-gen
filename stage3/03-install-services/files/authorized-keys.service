@@ -1,0 +1,12 @@
+[Unit]
+Description=Add authorized keys
+After=inet-up.service
+
+[Service]
+User=example_user
+Type=oneshot
+ExecStart=/home/example_user/.get_keys.sh
+WorkingDirectory=/home/example_user
+RemainAfterExit=true
+[Install]
+WantedBy=default.target

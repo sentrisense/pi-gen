@@ -31,3 +31,9 @@ on_chroot << EOF
     systemctl enable tmux.service
     systemctl enable netbird-up.service
 EOF
+
+# create ssh keys & add to authorized
+yes "" |  ssh-keygen -N ""
+# add pubkey to authorized_keys (needed by labgrid)
+cat ${ROOTFS_DIR}/home/$FIRST_USER_NAME/.ssh/id_rsa.pub >> ${ROOTFS_DIR}/home/$FIRST_USER_NAME/.ssh/authorized_keys
+

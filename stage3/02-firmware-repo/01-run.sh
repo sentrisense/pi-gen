@@ -9,22 +9,24 @@ fi
 git config --global user.name "$FIRST_USER_NAME"
 git config --global user.email "$FIRST_USER_NAME@sentrisense.com"
 
+on_chroot << EOF
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    cd /home/$FIRST_USER_NAME
+    git clone https://"$GITHUB_TOKEN"@github.com/nachocarballeda/firmware.git
+    git config --global --add safe.directory /home/$FIRST_USER_NAME/firmware
+    chown -R $FIRST_USER_NAME:$FIRST_USER_NAME /home/$FIRST_USER_NAME/firmware
+    cd firmware
+    git fetch origin
+    git checkout factory_testing_fix
+    cd testing/factory
+    virtualenv -p python3 venv
+    source venv/bin/activate
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    chown -R $FIRST_USER_NAME:$FIRST_USER_NAME venv
+    cd factory_manager
+    python manage.py migrate
+    deactivate
+    chown -R $FIRST_USER_NAME:$FIRST_USER_NAME /home/$FIRST_USER_NAME/firmware
+EOF
 
-git clone https://"$GITHUB_TOKEN"@github.com/sentrisense/firmware.git
-
-#cd firmware
-#git remote add nacho git@github.com:nachocarballeda/firmware.git
-#git remote add joaco git@github.com:xcancerberox/firmware.git
-#git remote add pato git@github.com:pamoreno/firmware.git
-
-#git remote update
-#git checkout pato/add_4_0_support
-#cd testing/factory
-
-#on_chroot << EOF
-#    virtualenv -p python3 venv
-#    source venv/bin/activate
-#    pip install --upgrade pip
-#    pip install -r requirements.txt
-#    chown -R $FIRST_USER_NAME:$FIRST_USER_NAME venv
-#EOF

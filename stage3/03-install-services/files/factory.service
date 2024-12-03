@@ -1,0 +1,14 @@
+[Unit]
+Description=Factory systemd service.
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/example_user/scripts/run_server.sh
+WorkingDirectory=/home/example_user
+Restart=on-failure
+User=example_user
+
+[Install]
+WantedBy=multi-user.target
+

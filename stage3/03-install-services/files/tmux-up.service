@@ -5,7 +5,7 @@ After=network.target labgrid-exporter.service
 [Service]
 User=example_user
 Type=oneshot
-ExecStart=/home/example_user/tmux-labgrid.sh
+ExecStart=/home/example_user/scripts/tmux-up.sh
 WorkingDirectory=/home/example_user
 RemainAfterExit=true
 [Install]

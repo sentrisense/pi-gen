@@ -12,13 +12,18 @@ read -p "Insert WPA country for the host (example: AR/ES/EU): " wpa_country
 
 read -p "Insert netbird setup key: " netbird_setup_key
 
+read -p "Insert Sentrisense token: " sentrisense_token
+
+read -p "Insert Emnify token: " emnify_token
+
 read -p "Insert github token: " github_token
 
 read -p "Insert wifi SSID " wifi_ssid
 
-read -p "Insert kiosk URL " kiosk_url
-
 read -s -p "Insert wifi password: " wifi_pswd
+echo
+
+read -s -p "Insert password for Django admin: " django_pswd
 echo
 
 # Create config file
@@ -34,5 +39,7 @@ echo "export WIFI_SSID='$wifi_ssid'" >> config
 echo "export WIFI_PSWD='$wifi_pswd'" >> config
 echo "DISABLE_FIRST_BOOT_USER_RENAME=1" >> config
 echo "WPA_COUNTRY='$wpa_country'" >> config
-echo "KIOSK_URL='$kiosk_url'" >> config
+echo "export SENTRISENSE_TOKEN='$sentrisense_token'" >> config
+echo "export EMNIFY_TOKEN='$emnify_token'" >> config
+echo "export DJANGO_PSWD='$django_pswd'" >> config
 echo "config file created, run ./build-docker.sh"

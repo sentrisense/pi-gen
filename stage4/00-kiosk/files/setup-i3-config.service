@@ -1,11 +1,11 @@
 [Unit]
-Description=Add authorized keys
+Description=configure i3 wm
 After=inet-up.service
 
 [Service]
 User=example_user
 Type=oneshot
-ExecStart=/home/example_user/scripts/get_keys.sh
+ExecStart=/home/example_user/scripts/i3_config.sh
 WorkingDirectory=/home/example_user
 RemainAfterExit=true
 [Install]

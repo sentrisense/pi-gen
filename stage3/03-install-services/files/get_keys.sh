@@ -21,4 +21,4 @@ fi
 
 # generate own keys & add to auth keys (labgrid requirement)
 yes "" | ssh-keygen
-cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+cat /home/example_user/.ssh/id_rsa.pub >> /home/example_user/.ssh/authorized_keys
